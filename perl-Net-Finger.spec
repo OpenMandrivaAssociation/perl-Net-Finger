@@ -15,7 +15,6 @@ Source:         http://www.cpan.org/modules/by-module/Net/%{module}-%{version}.t
 BuildRequires:  perl-devel
 %endif
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Net::Finger is a simple, straightforward implementation of a finger client in
