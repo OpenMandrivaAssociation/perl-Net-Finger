@@ -1,7 +1,7 @@
 %define module  Net-Finger
 %define name    perl-%{module}
 %define version 1.06
-%define release %mkrel 13
+%define release %mkrel 14
 
 Name:           %{name}
 Version:        %{version}
