@@ -1,21 +1,21 @@
-%define module  Net-Finger
-%define name    perl-%{module}
-%define version 1.06
-%define release %mkrel 14
+%define upstream_name    Net-Finger
+%define upstream_version 1.06
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        A Perl implementation of a finger client
-License:        GPL or Artistic
-Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Net/%{module}-%{version}.tar.bz2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    A Perl implementation of a finger client
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Net::Finger is a simple, straightforward implementation of a finger client in
@@ -23,7 +23,7 @@ Perl -- so simple, in fact, that writing this documentation is almost
 unnecessary.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -44,4 +44,3 @@ rm -rf %{buildroot}
 %doc Changes
 %{perl_vendorlib}/Net
 %{_mandir}/*/*
-
