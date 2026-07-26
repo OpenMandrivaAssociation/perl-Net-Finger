@@ -1,15 +1,13 @@
 %define upstream_name    Net-Finger
-%define upstream_version 1.06
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	1.06
+Release:	6
 
 Summary:	A Perl implementation of a finger client
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Net-Finger
-Source0:	https://cpan.metacpan.org/authors/id/F/FI/FIMM/Net-Finger-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/F/FI/FIMM/Net-Finger-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -21,7 +19,7 @@ Perl -- so simple, in fact, that writing this documentation is almost
 unnecessary.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -41,9 +39,7 @@ make test
 %changelog
 * Wed Jul 29 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 1.60.0-1mdv2010.0
 + Revision: 404092
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 1.06-14mdv2009.0
+- rebuild using %1.06 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 1.06-14mdv2009.0
 + Revision: 258010
 - rebuild
 
