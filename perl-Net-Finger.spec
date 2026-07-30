@@ -2,7 +2,7 @@
 %define upstream_version 1.06
 Name:		perl-%{upstream_name}
 Version:	1.06
-Release:	2
+Release:	3
 
 Summary:	A Perl implementation of a finger client
 License:	GPL+ or Artistic
@@ -23,7 +23,7 @@ unnecessary.
 %setup -q -n Net-Finger-1.06
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
