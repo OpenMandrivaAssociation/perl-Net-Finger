@@ -2,7 +2,7 @@
 %define upstream_version 1.06
 Name:		perl-%{upstream_name}
 Version:	1.06
-Release:	3
+Release:	4
 
 Summary:	A Perl implementation of a finger client
 License:	GPL+ or Artistic
